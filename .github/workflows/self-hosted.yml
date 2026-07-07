@@ -1,0 +1,28 @@
+name: Self Hosted Runner Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Hostname
+        run: hostname
+
+      - name: Print Current User
+        run: whoami
+
+      - name: Print Working Directory
+        run: pwd
+
+      - name: Build Completed
+        run: echo "Build Completed"
